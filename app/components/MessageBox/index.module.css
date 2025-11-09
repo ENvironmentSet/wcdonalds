@@ -1,0 +1,22 @@
+.message_box {
+  width: min(81%, 196rem);
+  height: min(14.6%, 20rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-bg);
+  border-radius: 10.1875rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.message {
+  line-height: 150%;
+  text-align: center;
+  font-size: 2rem;
+}
+.next_icon {
+  position: absolute;
+  right: min(2.5%, 8.4375rem);
+  width: min(5.51%, 13.3125rem);
+  aspect-ratio: 1 / 1;
+}
