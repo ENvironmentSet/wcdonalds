@@ -1,13 +1,10 @@
 import Image from "next/image";
 import styles from "./index.module.css";
 import arrow_icon_url from "@/public/assets/next_arrow.png";
-export type messageBoxProps = {
-  message: string;
-  onClick?: () => void;
-  child?: React.ReactNode;
-  isNextIcon?: boolean;
-};
-export default function MessageBox({ message, onClick, child, isNextIcon = false }: messageBoxProps) {
+export type MessageBoxProps =
+  | { message: string; child?: never; onClick?: () => void; isNextIcon?: boolean }
+  | { child: React.ReactNode; message?: never; onClick?: () => void; isNextIcon?: boolean };
+export default function MessageBox({ message, onClick, child, isNextIcon = false }: MessageBoxProps) {
   return (
     <div className={styles.message_box}>
       {child ? child : <p className={styles.message}>{message}</p>}
