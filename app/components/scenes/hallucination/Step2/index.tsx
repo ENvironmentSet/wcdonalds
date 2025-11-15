@@ -1,8 +1,19 @@
 "use client";
 
-import { useManageHallucinationState } from "@/hooks/useManageHallucinationState";
+import MessageBox from "@/components/MessageBox/MessageBox";
+import styles from "./index.module.css";
+import { motion } from "motion/react";
 
 export default function Step2() {
-  const { chosenMenu } = useManageHallucinationState();
-  return <div>{chosenMenu}</div>;
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.3 }}
+      className={styles.content_wrapper}
+    >
+      <MessageBox>석상씨는 AI니까 레시피 안알려줘도 다 알죠? 우리 웩도날드의 시그니처 ‘빅웩웩’ 만들어봐요.</MessageBox>
+    </motion.div>
+  );
 }
