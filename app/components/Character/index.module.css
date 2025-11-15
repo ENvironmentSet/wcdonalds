@@ -1,0 +1,4 @@
+.character_l {
+  display: relative;
+  width: min(20vw, 240rem);
+}
