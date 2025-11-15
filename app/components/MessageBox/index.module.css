@@ -13,6 +13,8 @@
   line-height: 150%;
   text-align: center;
   font-size: 2rem;
+  overflow: hidden;
+  padding: min(3%, 4.19rem);
 }
 .next_icon {
   position: absolute;

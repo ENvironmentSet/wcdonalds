@@ -1,0 +1,23 @@
+.instruction_box {
+  background-color: var(--color-primary-yellow);
+  width: min(81%, 196rem);
+  height: min(20%, 20rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icon_wrapper {
+  height: min(100%, 20rem);
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.instruction_text {
+  padding: min(3%, 4.19rem);
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 150%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
