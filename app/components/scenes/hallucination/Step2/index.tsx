@@ -15,7 +15,7 @@ export default function Step2() {
       className={styles.content_wrapper}
     >
       <MessageBox>석상씨는 AI니까 레시피 안알려줘도 다 알죠? 우리 웩도날드의 시그니처 ‘빅웩웩’ 만들어봐요.</MessageBox>
-      <Character imageUrl={workerImageUrl} size="l" characterName="석상이" />
+      <Character imageUrl={workerImageUrl} size="s" characterName="석상이" />
     </motion.div>
   );
 }

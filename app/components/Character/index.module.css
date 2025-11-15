@@ -1,4 +1,14 @@
 .character_l {
-  display: relative;
-  width: min(20vw, 240rem);
+  position: relative;
+  width: min(36vw, 240rem);
+}
+
+.character_m {
+  position: relative;
+  width: min(28vw, 64rem);
+}
+
+.character_s {
+  position: relative;
+  width: min(16vw, 43rem);
 }
