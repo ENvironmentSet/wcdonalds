@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 export const useManageHallucinationState = () => {
-  const [sceneNumber, setSceneNumber] = useState(0);
+  const [sceneNumber, setSceneNumber] = useState(1);
+  const [chosenMenu, setChosenMenu] = useState<number | null>(null);
 
-  return { sceneNumber, setSceneNumber };
+  return { sceneNumber, setSceneNumber, setChosenMenu, chosenMenu };
 };
