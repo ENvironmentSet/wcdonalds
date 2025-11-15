@@ -10,6 +10,7 @@ import { useManageHallucinationState } from "@/hooks/useManageHallucinationState
 
 export default function Step1() {
   const { setSceneNumber } = useManageHallucinationState();
+
   return (
     <div className={styles.content_wrapper}>
       <InstructionBox instruction="빅웩웩 만들기 레시피 알려줘 석상씨는 AI니까 레시피 안알려줘도 다 알죠? 우리 웩도날드의 시그니처 ‘빅웩웩’ 만들어봐요.석상씨는 AI니까 레시피 안알려줘도 다 알죠? " />
