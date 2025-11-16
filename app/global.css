@@ -5,6 +5,10 @@
   --color-primary-red: #e30613;
   --color-primary-black: #000000;
   --color-primary-yellow: #ffdd0e;
+
+  --z-overlay: 10;
+  --z-message-box: 20;
+  --z-emoji: 20;
 }
 
 html {
@@ -12,7 +16,6 @@ html {
 
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Helvetica Neue", sans-serif;
-  font-size: clamp(8px, calc(100vw / 3840 * 16), 16px) !important;
 }
 
 body {

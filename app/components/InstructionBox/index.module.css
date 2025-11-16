@@ -1,7 +1,7 @@
 .instruction_box {
   background-color: var(--color-primary-yellow);
-  width: min(81%, 196rem);
-  height: min(20%, 20rem);
+  width: min(81vw, 196rem);
+  height: min(20vh, 20rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,9 +13,9 @@
 }
 
 .instruction_text {
-  padding: min(3%, 4.19rem);
+  padding: min(3vw, 4.19rem);
   display: inline-block;
-  font-size: 2rem;
+  font-size: min(1.6vw, 5rem);
   text-align: center;
   line-height: 150%;
   overflow-y: scroll;

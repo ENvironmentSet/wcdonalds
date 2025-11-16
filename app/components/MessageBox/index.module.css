@@ -8,17 +8,18 @@
   background-color: var(--color-primary-bg);
   border-radius: 10rem;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-.message {
-  line-height: 150%;
-  text-align: center;
-  font-size: 2.4rem;
-  overflow: hidden;
-  padding: min(3vw, 4.19rem);
+  z-index: var(--z-message-box);
 }
 .next_icon {
   position: absolute;
   right: min(2.5%, 8rem);
   width: min(5.51%, 13rem);
   aspect-ratio: 1 / 1;
+}
+.message {
+  line-height: 150%;
+  text-align: center;
+  font-size: min(1.6vw, 5rem);
+  overflow: hidden;
+  padding: min(3vw, 4.19rem);
 }

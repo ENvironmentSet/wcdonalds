@@ -13,6 +13,19 @@
   flex-direction: column;
   gap: min(3%, 4.19rem);
 }
+.background_div_matrix {
+  background-image: url("../public/background_matrix.webp");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: min(3%, 4.19rem);
+}
 .background_div::before {
   content: "";
   position: absolute;

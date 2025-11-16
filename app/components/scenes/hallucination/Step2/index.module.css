@@ -7,6 +7,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+.character_wrapper {
+  width: 100%;
+  gap: min(10%, 12rem);
+  justify-content: center;
+  display: flex;
+
+  padding-top: min(3%, 8rem);
+}
+.dim_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: var(--z-overlay);
+  pointer-events: none;
+}
+
+.upper_character_wrapper {
   position: relative;
+  top: -80vh;
+  z-index: var(--z-message-box);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
