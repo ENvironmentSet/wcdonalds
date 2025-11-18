@@ -9,6 +9,7 @@ import { MenuMessage } from "@/hallucination/type";
 import { useState } from "react";
 
 import workerImageUrl from "@/public/assets/character/worker_character03.png";
+import workerImageUrl2 from "@/public/assets/character/worker_character04.png";
 import breadImageUrl from "@/public/assets/burger_ingredients/bread.png";
 import baconImageUrl from "@/public/assets/burger_ingredients/bacon.png";
 import cheeseImageUrl from "@/public/assets/burger_ingredients/cheese.png";
@@ -75,14 +76,14 @@ export default function Step3({ onSelect, menuMessage }: StepProps) {
     >
       <MessageBox>{sceneNum == 0 ? menuMessage.message[0] : menuMessage.message[1]}</MessageBox>
       <div className={styles.character_wrapper}>
-        <Character imageUrl={workerImageUrl} size="l" characterName="석상이" />
+        <Character imageUrl={sceneNum == 0 ? workerImageUrl : workerImageUrl2} size="l" characterName="석상이" />
       </div>
       {sceneNum == 0
         ? ingredientImages.map(([src, name]) => (
             <motion.div
               key={name}
               whileHover={{ scale: 1.2 }}
-              animate={{ scale: [1, 1.12, 1] }} // 1 → 1.12 → 1
+              animate={{ scale: [1, 1.12, 1] }}
               transition={{
                 duration: 1.6,
                 repeat: Infinity,
@@ -98,7 +99,7 @@ export default function Step3({ onSelect, menuMessage }: StepProps) {
             <motion.div
               key={name}
               whileHover={{ scale: 1.2 }}
-              animate={{ scale: [1, 1.12, 1] }} // 1 → 1.12 → 1
+              animate={{ scale: [1, 1.12, 1] }}
               transition={{
                 duration: 1.6,
                 repeat: Infinity,
