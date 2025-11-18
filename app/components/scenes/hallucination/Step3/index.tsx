@@ -28,6 +28,7 @@ import rainbowImageUrl from "@/public/assets/wecburger_ingredients/rainbow.png";
 import teddyBearImageUrl from "@/public/assets/wecburger_ingredients/teddybear.png";
 
 import warningSign from "@/public/assets/warning.png";
+import TextBox from "@/components/TextBox/TextBox";
 
 type StepProps = {
   onSelect: () => void;
@@ -117,6 +118,14 @@ export default function Step3({ onSelect, menuMessage }: StepProps) {
           <h1>할루시네이션 경보 발생</h1>
           <h2>오답 가능성 99.7%</h2>
           <h2>석상씨, 지금 근거 없는 추론을 하고 있습니다.</h2>
+          <TextBox
+            textArr={[
+              "AI가 모르면 솔직히  ‘모른다’ 고 해야 하는데,",
+              "괜히 빈칸을 메우겠다고 지금처럼 그럴듯한 말을 만들어내는 상황이 있습니다.",
+              "그게 바로 할루시네이션 입니다.",
+            ]}
+            size="s"
+          />
         </div>
       )}
     </motion.div>
