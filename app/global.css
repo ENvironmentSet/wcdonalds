@@ -1,0 +1,8 @@
+html {
+  height: 100%;
+  font-size: var(--font-size-medium);
+}
+
+body {
+  height: 100%;
+}

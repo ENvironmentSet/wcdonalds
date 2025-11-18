@@ -1,11 +1,15 @@
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 import "normalize.css";
+import "./global.css";
+import "./tokens.css";
 
 const pretendard = localFont({
   src: "./PretendardVariable.woff2",
   display: "swap",
   weight: "45 920",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Helvetica Neue", "sans-serif"],
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,0 +1,9 @@
+:root {
+  --color-primary-bg: #fffadc;
+  --color-primary-red: #e30613;
+  --color-primary-black: #000000;
+  --color-primary-yellow: #ffdd0e;
+
+  --font-size-medium: clamp(12px, calc(100vw / 3840 * 64), 64px);
+  --font-size-large: calc(var(--font-size-medium) * 1.25);
+}
