@@ -11,5 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   );
 }
 
-//@TODO: 메타데이터 추가
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: "내 AI바야!",
+  description: "체험을 통해 재미있게 배우는 프롬프트 엔지니어링"
+};
