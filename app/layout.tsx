@@ -1,9 +1,16 @@
+import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 import "normalize.css";
 
+const pretendard = localFont({
+  src: "./PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={pretendard.className}>
       <body>
         {children}
       </body>
