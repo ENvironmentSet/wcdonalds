@@ -4,7 +4,8 @@ import MessageBox from "@/components/MessageBox/MessageBox";
 import styles from "./index.module.css";
 import { motion } from "motion/react";
 import Character from "@/components/Character/Character";
-
+import EmojiContainer from "@/components/EmojiContainer/EmojiContainer";
+import { Menu, MenuMessage } from "@/hallucination/type";
 import workerImageUrl from "@/public/assets/character/worker_character03.png";
 
 import breadImageUrl from "@/public/assets/burger_ingredients/bread.png";
@@ -14,13 +15,14 @@ import lettuceImageUrl from "@/public/assets/burger_ingredients/lettuce.png";
 import fireImageUrl from "@/public/assets/burger_ingredients/fire.png";
 import tomatoImageUrl from "@/public/assets/burger_ingredients/tomato.png";
 import onionImageUrl from "@/public/assets/burger_ingredients/onion.png";
-import EmojiContainer from "@/components/EmojiContainer/EmojiContainer";
 import burgerImageUrl from "@/public/assets/burger_ingredients/burger.png";
 import burgerImageUrl2 from "@/public/assets/burger_ingredients/burger2.png";
+import { useState } from "react";
 
 type StepProps = {
   onSelect: () => void;
-  menu: string;
+  menu: Menu;
+  menuMessage: MenuMessage;
 };
 
 const ingredientImages = [
@@ -34,8 +36,14 @@ const ingredientImages = [
   [burgerImageUrl, "burger"],
   [burgerImageUrl2, "burger1"],
 ] as const;
+
 const wcIncredientImages = [[]];
-export default function Step3({ onSelect, menu }: StepProps) {
+export default function Step3({ onSelect, menu, menuMessage }: StepProps) {
+  const [sceneNum, setSceneNum] = useState(0);
+  const handlePageClick = () => {
+    setSceneNum((prev) => prev + 1);
+    onSelect();
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -43,23 +51,21 @@ export default function Step3({ onSelect, menu }: StepProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.3 }}
       className={styles.content_wrapper}
-      onClick={() => onSelect()}
+      onClick={handlePageClick}
     >
-      <MessageBox>{menu}...? 음... 빅맥이랑 비슷한건가?</MessageBox>
+      <MessageBox>{sceneNum == 0 ? menuMessage.message[0] : menuMessage.message[1]}</MessageBox>
       <div className={styles.character_wrapper}>
         <Character imageUrl={workerImageUrl} size="l" characterName="석상이" />
       </div>
-      {ingredientImages.map(([src, name]) => {
-        return (
-          <motion.div
-            key={name}
-            whileHover={{ scale: 1.2 }}
-            className={`${styles.emoji_wrapper} ${styles[`emoji_${name}`]}`}
-          >
-            <EmojiContainer imagePath={src} altText={name} />
-          </motion.div>
-        );
-      })}
+      {ingredientImages.map(([src, name]) => (
+        <motion.div
+          key={name}
+          whileHover={{ scale: 1.2 }}
+          className={`${styles.emoji_wrapper} ${styles[`emoji_${name}`]}`}
+        >
+          <EmojiContainer imagePath={src} altText={name} />
+        </motion.div>
+      ))}
     </motion.div>
   );
 }
