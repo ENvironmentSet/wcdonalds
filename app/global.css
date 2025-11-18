@@ -6,9 +6,10 @@
   --color-primary-black: #000000;
   --color-primary-yellow: #ffdd0e;
 
-  --z-overlay: 10;
-  --z-message-box: 20;
-  --z-emoji: 20;
+  --z-overlay: 20;
+  --z-message-box: 30;
+  --z-emoji: 10;
+  --z-upper-overlay: 40;
 }
 
 html {

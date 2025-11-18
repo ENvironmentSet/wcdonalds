@@ -43,7 +43,6 @@ export default function Hallucination() {
       {sceneNumber === 2 && <Step2 menu={chosenMenu ?? Menu.빅웩웩} onSelect={() => setSceneNumber(3)} />}
       {sceneNumber === 3 && (
         <Step3
-          menu={chosenMenu ?? Menu.빅웩웩}
           menuMessage={menuConfig[chosenMenu ?? Menu.빅웩웩]}
           onSelect={() => {
             setSceneNumber(4);

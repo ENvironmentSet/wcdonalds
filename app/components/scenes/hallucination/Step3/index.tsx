@@ -1,13 +1,14 @@
 "use client";
-
+import Image from "next/image";
 import MessageBox from "@/components/MessageBox/MessageBox";
 import styles from "./index.module.css";
 import { motion } from "motion/react";
 import Character from "@/components/Character/Character";
 import EmojiContainer from "@/components/EmojiContainer/EmojiContainer";
-import { Menu, MenuMessage } from "@/hallucination/type";
-import workerImageUrl from "@/public/assets/character/worker_character03.png";
+import { MenuMessage } from "@/hallucination/type";
+import { useState } from "react";
 
+import workerImageUrl from "@/public/assets/character/worker_character03.png";
 import breadImageUrl from "@/public/assets/burger_ingredients/bread.png";
 import baconImageUrl from "@/public/assets/burger_ingredients/bacon.png";
 import cheeseImageUrl from "@/public/assets/burger_ingredients/cheese.png";
@@ -17,11 +18,19 @@ import tomatoImageUrl from "@/public/assets/burger_ingredients/tomato.png";
 import onionImageUrl from "@/public/assets/burger_ingredients/onion.png";
 import burgerImageUrl from "@/public/assets/burger_ingredients/burger.png";
 import burgerImageUrl2 from "@/public/assets/burger_ingredients/burger2.png";
-import { useState } from "react";
+
+import lollyPopImageUrl from "@/public/assets/wecburger_ingredients/lolly.png";
+import avocadoImageUrl from "@/public/assets/wecburger_ingredients/avocado.png";
+import boneMeatImageUrl from "@/public/assets/wecburger_ingredients/bonemeat.png";
+import cylinderImageUrl from "@/public/assets/wecburger_ingredients/cylinder.png";
+import germsImageUrl from "@/public/assets/wecburger_ingredients/germs.png";
+import rainbowImageUrl from "@/public/assets/wecburger_ingredients/rainbow.png";
+import teddyBearImageUrl from "@/public/assets/wecburger_ingredients/teddybear.png";
+
+import warningSign from "@/public/assets/warning.png";
 
 type StepProps = {
   onSelect: () => void;
-  menu: Menu;
   menuMessage: MenuMessage;
 };
 
@@ -32,17 +41,27 @@ const ingredientImages = [
   [lettuceImageUrl, "lettuce"],
   [fireImageUrl, "fire"],
   [tomatoImageUrl, "tomato"],
-  [onionImageUrl, "onion"],
   [burgerImageUrl, "burger"],
-  [burgerImageUrl2, "burger1"],
+  [burgerImageUrl2, "burger2"],
+  [onionImageUrl, "onion"],
 ] as const;
 
-const wcIncredientImages = [[]];
-export default function Step3({ onSelect, menu, menuMessage }: StepProps) {
+const wcIncredientImages = [
+  [lollyPopImageUrl, "lolly"],
+  [boneMeatImageUrl, "meat"],
+  [rainbowImageUrl, "rainbow"],
+  [lettuceImageUrl, "lettuce"],
+  [germsImageUrl, "germs"],
+  [cylinderImageUrl, "cylinder"],
+  [teddyBearImageUrl, "teddybear"],
+  [avocadoImageUrl, "avocado"],
+] as const;
+
+export default function Step3({ onSelect, menuMessage }: StepProps) {
   const [sceneNum, setSceneNum] = useState(0);
   const handlePageClick = () => {
     setSceneNum((prev) => prev + 1);
-    onSelect();
+    if (sceneNum == 3) onSelect();
   };
   return (
     <motion.div
@@ -57,15 +76,49 @@ export default function Step3({ onSelect, menu, menuMessage }: StepProps) {
       <div className={styles.character_wrapper}>
         <Character imageUrl={workerImageUrl} size="l" characterName="석상이" />
       </div>
-      {ingredientImages.map(([src, name]) => (
-        <motion.div
-          key={name}
-          whileHover={{ scale: 1.2 }}
-          className={`${styles.emoji_wrapper} ${styles[`emoji_${name}`]}`}
-        >
-          <EmojiContainer imagePath={src} altText={name} />
-        </motion.div>
-      ))}
+      {sceneNum == 0
+        ? ingredientImages.map(([src, name]) => (
+            <motion.div
+              key={name}
+              whileHover={{ scale: 1.2 }}
+              animate={{ scale: [1, 1.12, 1] }} // 1 → 1.12 → 1
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+              className={`${styles.emoji_wrapper} ${styles[`emoji_${name}`]}`}
+            >
+              <EmojiContainer imagePath={src} altText={name} />
+            </motion.div>
+          ))
+        : wcIncredientImages.map(([src, name]) => (
+            <motion.div
+              key={name}
+              whileHover={{ scale: 1.2 }}
+              animate={{ scale: [1, 1.12, 1] }} // 1 → 1.12 → 1
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+              className={`${styles.emoji_wrapper} ${styles[`emoji_${name}`]}`}
+            >
+              <EmojiContainer imagePath={src} altText={name} />
+            </motion.div>
+          ))}
+      {sceneNum == 2 && (
+        <div className={styles.overlay}>
+          <div className={styles.warning}>
+            <Image src={warningSign} alt="warning" fill />
+          </div>
+          <h1>할루시네이션 경보 발생</h1>
+          <h2>오답 가능성 99.7%</h2>
+          <h2>석상씨, 지금 근거 없는 추론을 하고 있습니다.</h2>
+        </div>
+      )}
     </motion.div>
   );
 }
