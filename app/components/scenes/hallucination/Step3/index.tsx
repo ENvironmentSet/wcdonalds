@@ -115,9 +115,11 @@ export default function Step3({ onSelect, menuMessage }: StepProps) {
           <div className={styles.warning}>
             <Image src={warningSign} alt="warning" fill />
           </div>
-          <h1>할루시네이션 경보 발생</h1>
-          <h2>오답 가능성 99.7%</h2>
-          <h2>석상씨, 지금 근거 없는 추론을 하고 있습니다.</h2>
+          <h1 className={styles.warning_comment}>할루시네이션 경보 발생</h1>
+          <div className={styles.text_wrapper}>
+            <h2 className={styles.warning_explanation}>오답 가능성 99.7%</h2>
+            <h2 className={styles.warning_explanation}>석상씨, 지금 근거 없는 추론을 하고 있습니다.</h2>
+          </div>
           <TextBox
             textArr={[
               "AI가 모르면 솔직히  ‘모른다’ 고 해야 하는데,",
