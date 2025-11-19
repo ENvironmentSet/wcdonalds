@@ -1,0 +1,114 @@
+.content_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: min(3%, 8rem);
+}
+.character_wrapper {
+  width: 100%;
+  gap: min(10%, 12rem);
+  justify-content: center;
+  display: flex;
+
+  padding-top: min(3%, 8rem);
+}
+
+.emoji_wrapper {
+  position: absolute;
+  width: min(6vw, 28.125rem);
+  aspect-ratio: 1/1;
+  z-index: var(--z-emoji);
+}
+.emoji_onion {
+  top: min(35%, 48rem);
+  left: min(74%, 186rem);
+}
+.emoji_burger,
+.emoji_teddybear {
+  top: min(79%, 107rem);
+  left: min(23%, 51rem);
+}
+
+.emoji_bacon,
+.emoji_meat {
+  top: min(47%, 63rem);
+  left: min(26%, 56rem);
+}
+
+.emoji_tomato,
+.emoji_cylinder {
+  top: min(70%, 90rem);
+  left: min(6%, 11rem);
+}
+.emoji_bread,
+.emoji_lolly {
+  top: min(40%, 54rem);
+  left: min(8%, 19rem);
+}
+
+.emoji_lettuce {
+  top: min(53%, 68rem);
+  left: min(84%, 208rem);
+}
+.emoji_fire,
+.emoji_germs {
+  top: min(80%, 109rem);
+  left: min(70%, 174rem);
+}
+.emoji_cheese,
+.emoji_rainbow {
+  top: min(75%, 101rem);
+  left: min(88%, 208rem);
+}
+.emoji_burger2,
+.emoji_avocado {
+  top: min(58%, 74rem);
+  left: min(68%, 164rem);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 0, 0, 0.8);
+  z-index: var(--z-upper-overlay);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: min(15vh, 12rem);
+}
+
+.warning {
+  width: min(28%, 70rem);
+  aspect-ratio: 8/1;
+
+  position: relative;
+}
+
+.warning_comment {
+  font-weight: 700;
+  font-size: min(3.5vw, 4.6rem);
+  color: white;
+  margin-top: min(10vh, 9.3rem);
+  margin-bottom: min(7vh, 8rem);
+}
+.warning_explanation {
+  color: white;
+  font-size: min(2.4vw, 3rem);
+  font-weight: 600;
+  line-height: 140%;
+  margin: 0;
+}
+
+.text_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: min(7vh, 8rem);
+}

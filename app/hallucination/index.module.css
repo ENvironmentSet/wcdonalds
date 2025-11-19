@@ -1,0 +1,39 @@
+@import "../global.css";
+
+.background_div {
+  background-image: url("../public/background_wecdonald.webp");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: min(3%, 4.19rem);
+}
+.background_div_matrix {
+  background-image: url("../public/background_matrix.webp");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: min(3%, 4.19rem);
+}
+.background_div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.background_div > * {
+  position: relative;
+  z-index: 1;
+}
