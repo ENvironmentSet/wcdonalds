@@ -5,14 +5,16 @@ import styles from "./index.module.css";
 import { DetailBox } from "../DetailBox/DetailBox";
 import { NextButton } from "../NextButton/NextButton";
 import typography from "@/public/assets/wcdonalds-typography.png";
+import clsx from "clsx";
 
-export function ChapterCover({ title, keywords, detail }: {
+export function ChapterCover({ className, title, keywords, detail }: {
+  className?: string;
   title: string;
   keywords: string[];
   detail: React.ReactNode;
 }) {
   return (
-    <div className={styles.cover_background}>
+    <div className={clsx(styles.cover_background, className)}>
       <main className={styles.cover_container}>
         <Image src={typography} alt="웩도날드 타이포그래피" preload objectFit="contain" />
         <h1 className={styles.cover_title}>{title}</h1>
