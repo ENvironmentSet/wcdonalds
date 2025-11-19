@@ -1,0 +1,40 @@
+.content_wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: min(3%, 8rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fire_container {
+  width: 70vw;
+  height: 100vh;
+
+  position: absolute;
+}
+.lower_wrapper {
+  width: 100vw;
+  height: 70vh;
+
+  align-items: flex-end;
+  display: flex;
+  gap: 2vw;
+  position: absolute;
+  bottom: 0;
+  left: 4vw;
+  z-index: var(--z-message-box);
+}
+
+.btn_wrapper {
+  padding-bottom: 3vh;
+  padding-left: 10vw;
+}
+.bg_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(130, 0, 0, 0.5);
+  z-index: 1;
+}

@@ -63,7 +63,7 @@ export default function Step3({ onSelect, menuMessage }: StepProps) {
   const [sceneNum, setSceneNum] = useState(0);
   const handlePageClick = () => {
     setSceneNum((prev) => prev + 1);
-    if (sceneNum == 3) onSelect();
+    if (sceneNum == 2) onSelect();
   };
   return (
     <motion.div

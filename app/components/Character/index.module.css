@@ -1,6 +1,6 @@
 .character_l {
   position: relative;
-  width: min(36vw, 240rem);
+  width: min(30vw, 240rem);
 }
 
 .character_m {
