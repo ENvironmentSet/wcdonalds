@@ -7,11 +7,12 @@ import { NextButton } from "../NextButton/NextButton";
 import typography from "@/public/assets/wcdonalds-typography.png";
 import clsx from "clsx";
 
-export function ChapterCover({ className, title, keywords, detail }: {
+export function ChapterCover({ className, title, keywords, detail, onClickNext }: {
   className?: string;
   title: string;
   keywords: string[];
   detail: React.ReactNode;
+  onClickNext: () => void;
 }) {
   return (
     <div className={clsx(styles.cover_background, className)}>
@@ -30,7 +31,7 @@ export function ChapterCover({ className, title, keywords, detail }: {
           <DetailBox>
             {detail}
           </DetailBox>
-          <NextButton onClick={() => {}} className={styles.cover_next_button} />
+          <NextButton onClick={onClickNext} className={styles.cover_next_button} />
         </div>
       </main>
     </div>
