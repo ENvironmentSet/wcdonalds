@@ -6,3 +6,9 @@ export enum Menu {
 export type MenuMessage = {
   message: [string, string];
 };
+
+export const MenuSauce: Record<Menu, string> = {
+  [Menu.빅웩웩]: "빅웩소스",
+  [Menu.웩웩스파이시]: "웩스파이시소스",
+  [Menu.웩웩파운더]: "웩파운더소스",
+};

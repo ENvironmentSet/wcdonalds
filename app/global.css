@@ -1,25 +1,7 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-
-:root {
-  --color-primary-bg: #fffadc;
-  --color-primary-red: #e30613;
-  --color-primary-black: #000000;
-  --color-primary-yellow: #ffdd0e;
-
-  --z-overlay: 20;
-  --z-message-box: 30;
-  --z-emoji: 10;
-  --z-upper-overlay: 40;
-}
-
 html {
   height: 100%;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Helvetica Neue", sans-serif;
 }
 
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }

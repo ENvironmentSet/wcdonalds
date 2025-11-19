@@ -9,7 +9,7 @@ import workerImageUrl from "@/public/assets/character/worker_character02.png";
 import Character from "@/components/Character/Character";
 import recipe_folder from "@/public/assets/wc_folder.png";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import solutionSign from "@/public/assets/solution.png";
 import TextBox from "@/components/TextBox/TextBox";
 export default function Step6({ onSelect }: { onSelect: () => void }) {
@@ -18,6 +18,15 @@ export default function Step6({ onSelect }: { onSelect: () => void }) {
   const [isDropped, setIsDropped] = useState(false);
   const [sceneNum, setSceneNum] = useState(0);
   const dropZoneRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (sceneNum !== 1) return;
+
+    const timer = setTimeout(() => {
+      onSelect();
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [sceneNum, onSelect]);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);

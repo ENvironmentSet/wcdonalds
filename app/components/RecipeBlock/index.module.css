@@ -1,0 +1,7 @@
+.image_wrapper {
+  width: min(48vw, 144rem);
+  height: min(51vh, 101rem);
+  position: relative;
+
+  margin: min(1vw);
+}
