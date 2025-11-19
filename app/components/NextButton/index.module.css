@@ -1,0 +1,10 @@
+.next_button {
+  width: 214px;
+  height: 214px;
+  border-radius: 214px;
+  background-color: var(--color-primary-red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
