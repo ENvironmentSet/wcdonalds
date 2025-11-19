@@ -1,0 +1,5 @@
+.emoji_container {
+  width: min(7vw, 18.75rem);
+  aspect-ratio: 1/1;
+  position: relative;
+}
