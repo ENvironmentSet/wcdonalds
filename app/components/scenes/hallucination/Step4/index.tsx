@@ -19,15 +19,20 @@ export default function Step4({ menu, onSelect }: StepProps) {
       transition={{ duration: 1 }}
       className={styles.content_wrapper}
     >
-      <MessageBox>`매니저님! ${menu} 버거 완성했습니다!`</MessageBox>
-      <div>
-        <div className={styles.burger_wrapper}>
-          <Image src={wcBurgerImageUrl} alt="요상한 버거" fill />
+      <MessageBox>{`매니저님! ${Menu[menu]} 버거 완성했습니다!`}</MessageBox>
+      <div className={styles.lower_container}>
+        <div className={styles.burger_button_wrapper}>
+          <div className={styles.burger_wrapper}>
+            <Image src={wcBurgerImageUrl} alt="요상한 버거" fill />
+          </div>
           <TextButton text={"따끔하게 교육하기"} />
         </div>
         <Character imageUrl={workerImageUrl} size="l" characterName="석상이" />
-        <div className={styles.burger_wrapper}>
-          <Image src={wcBurgerImageUrl} alt="요상한 버거" fill />
+        <div className={styles.burger_button_wrapper}>
+          <div className={styles.burger_wrapper}>
+            <Image src={wcBurgerImageUrl} alt="요상한 버거" fill />
+          </div>
+          <TextButton text={"화내기"} />
         </div>
       </div>
     </motion.div>
