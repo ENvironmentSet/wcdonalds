@@ -4,6 +4,7 @@
   border: none;
   border-radius: 5.9rem;
   line-height: 80%;
+  z-index: var(--z-upper-overlay);
 }
 
 .white {
@@ -11,4 +12,8 @@
 }
 .yellow {
   background-color: var(--color-primary-yellow);
+}
+.s {
+  width: min(10vw, 25rem);
+  font-size: var(--font-size-small);
 }

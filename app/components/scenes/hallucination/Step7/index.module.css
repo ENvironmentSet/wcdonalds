@@ -37,3 +37,70 @@
 .chat_input::placeholder {
   color: rgba(68, 65, 65, 0.7);
 }
+
+.chat_wrapper {
+  width: min(60vw, 150rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.answer_text {
+  margin-top: min(0.8vw, 2rem);
+  font-size: min(1.1vw, 3.6rem);
+}
+
+.error_text {
+  margin-top: min(0.8vw, 2rem);
+  font-size: min(1vw, 3.2rem);
+  color: #ff5555;
+}
+
+.recipe_toggle_button {
+  position: absolute;
+  right: min(4vw, 8rem);
+  bottom: min(8vw, 12rem);
+  padding: min(0.8vw, 2rem) min(1.4vw, 3.4rem);
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: var(--color-primary-red);
+  color: #fff;
+  font-weight: 600;
+  font-size: min(1vw, 3.2rem);
+}
+
+.recipe_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-upper-overlay);
+}
+
+.recipe_modal {
+  border-radius: 2rem;
+  padding: min(2vw, 4rem);
+  overflow: auto;
+}
+
+.folder_button {
+  width: min(12vw, 20rem);
+  height: min(10vw, 20rem);
+}
+.recipe_opener {
+  position: absolute;
+  right: 10vw;
+  bottom: 20vh;
+  z-index: var(--z-message-box);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_wrapper {
+  height: 55vh;
+}
