@@ -67,7 +67,7 @@ export default function Hallucination() {
             setSceneNumber(6);
           }}
         />
-      )}{" "}
+      )}
       {sceneNumber === 6 && (
         <Step6
           onSelect={() => {
