@@ -11,13 +11,20 @@
 .burger_wrapper {
   position: relative;
   width: min(28vw, 78rem);
-  height: min(35vw, 118rem);
+  height: min(32vw, 118rem);
 }
 .lower_container {
   display: flex;
+  z-index: var(--z-message-box);
 }
 .burger_button_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.bg_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
