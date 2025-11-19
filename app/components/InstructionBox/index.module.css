@@ -13,11 +13,15 @@
 }
 
 .instruction_text {
-  padding: min(3vw, 4.19rem);
   display: inline-block;
   font-size: min(1.6vw, 5rem);
-  text-align: center;
-  line-height: 150%;
+
+  line-height: 140%;
   overflow-y: scroll;
   scrollbar-width: none;
+  margin: 0;
+}
+.text_box {
+  padding: min(3vw, 4.19rem);
+  text-align: center;
 }

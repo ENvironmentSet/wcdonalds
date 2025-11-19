@@ -24,7 +24,12 @@ export default function Step1({ onSelect }: StepProps) {
       transition={{ duration: 1.3 }}
       className={styles.content_wrapper}
     >
-      <InstructionBox instruction="당신은 지금 웩도날드의 매니저입니다. 아래의 웩도날드 메뉴판에서 하나를 선택하고, 알바생 석상이에게 만들어보라는 프롬프트를 입력해보세요." />
+      <InstructionBox
+        instruction={[
+          "당신은 지금 웩도날드의 매니저입니다. 아래의 웩도날드 메뉴판에서 하나를 선택하고,",
+          "알바생 석상이에게 만들어보라는 프롬프트를 입력해보세요.",
+        ]}
+      />
       <div className={styles.menu_container}>
         {[burger_1, burger_2, burger_3].map((img, idx) => {
           const menu = menus[idx];
