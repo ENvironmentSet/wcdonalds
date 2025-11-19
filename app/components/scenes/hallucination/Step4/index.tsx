@@ -6,7 +6,7 @@ import Character from "@/components/Character/Character";
 import workerImageUrl from "@/public/assets/character/worker_character_withd_burger.png";
 import wcBurgerImageUrl from "@/public/assets/burger/wcburger.png";
 import Image, { StaticImageData } from "next/image";
-import TextButton from "@/components/Button/Button";
+import TextButton from "@/components/TextButton/TextButton";
 
 import bgBigWeck from "@/public/step4_bigwcwc.png";
 import bgSpicy from "@/public/step4_wcwcspicy.png";

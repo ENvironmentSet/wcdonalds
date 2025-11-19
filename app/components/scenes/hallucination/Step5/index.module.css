@@ -38,3 +38,9 @@
   background: rgba(130, 0, 0, 0.5);
   z-index: 1;
 }
+.popup_message {
+  z-index: var(--z-message-box);
+  position: absolute;
+  top: 30vh;
+  left: 10vw;
+}

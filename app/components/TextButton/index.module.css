@@ -1,8 +1,14 @@
 .button_wrapper {
-  background-color: var(--color-primary-yellow);
   width: min(20vw, 50rem);
   font-size: min(1.6vw, 5rem);
   border: none;
   border-radius: 5.9rem;
   line-height: 80%;
+}
+
+.white {
+  background-color: var(--color-primary-bg);
+}
+.yellow {
+  background-color: var(--color-primary-yellow);
 }
