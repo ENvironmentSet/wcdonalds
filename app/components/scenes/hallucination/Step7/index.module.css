@@ -104,3 +104,53 @@
 .main_wrapper {
   height: 55vh;
 }
+.modal_overlay {
+  position: fixed;
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal_box {
+  background: white;
+  border-radius: 2rem;
+  padding: 3rem 4rem;
+  width: min(90vw, 45rem);
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.yes_btn {
+  background: #e30613;
+  color: white;
+  padding: 1.2rem 2.4rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.no_btn {
+  background: #ffc300;
+  color: black;
+  padding: 1.2rem 2.4rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}

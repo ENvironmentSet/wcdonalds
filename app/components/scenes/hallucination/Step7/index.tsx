@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 import workerImageUrl from "@/public/assets/character/worker_character04.png";
 import MessageBox from "@/components/MessageBox/MessageBox";
 import RecipeBlock from "@/components/RecipeBlock/RecipeBlock";
-import { askReceipt, ReceiptState } from "@/actions/askReceipt";
+
 import ChatBubble from "@/components/ChatBubble/ChatBubble";
 import folderImgUrl from "@/public/assets/wc_folder.png";
 import Image from "next/image";
@@ -28,8 +28,8 @@ export default function Step7({ onSelect, menu }: { onSelect: () => void; menu: 
   const lastAnswerRef = useRef<string | null>(null);
   const lastErrorRef = useRef<string | null>(null);
   const [showRecipeModal, setShowRecipeModal] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [wantMoreModal, setWantMoreModal] = useState(false);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -44,10 +44,19 @@ export default function Step7({ onSelect, menu }: { onSelect: () => void; menu: 
     startTransition(() => {
       formAction(formData);
     });
+    const res = await fetch("http://localhost:8000/api/receipt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt }),
+      cache: "no-store",
+    });
 
-    // 입력 리셋
     form.reset();
   };
+  useEffect(() => {
+    if (userMessages.length % 3 === 0) setWantMoreModal(true);
+    setWantMoreModal(false);
+  }, [userMessages]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -96,22 +105,22 @@ export default function Step7({ onSelect, menu }: { onSelect: () => void; menu: 
 
               {hasConversation && (
                 <div className={styles.chat_wrapper}>
-                  {/* 유저 메시지 */}
+                  {/* 유저 메시지 누적 */}
                   {userMessages.map((msg, i) => (
                     <ChatBubble key={`u-${i}`} role="user">
                       {msg}
                     </ChatBubble>
                   ))}
 
-                  {/* 로딩 */}
-                  {isPending && <ChatBubble role="assistant" isLoading />}
-
-                  {/* 누적된 AI 메시지 */}
+                  {/* AI 메시지 누적 */}
                   {assistantMessages.map((msg, i) => (
                     <ChatBubble key={`a-${i}`} role="assistant" isError={msg.isError}>
                       {msg.content}
                     </ChatBubble>
                   ))}
+
+                  {/* 로딩 버블 */}
+                  {isPending && <ChatBubble role="assistant" isLoading />}
                 </div>
               )}
             </>
@@ -167,6 +176,7 @@ export default function Step7({ onSelect, menu }: { onSelect: () => void; menu: 
           </div>
         )}
       </div>
+      {wantMoreModal && <div className={styles.modal_overlay} />}
     </ViewTransition>
   );
 }
