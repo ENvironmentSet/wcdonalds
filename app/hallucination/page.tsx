@@ -9,6 +9,7 @@ import { Menu, MenuMessage } from "@/hallucination/type";
 import Step4 from "@/components/scenes/hallucination/Step4";
 import Step5 from "@/components/scenes/hallucination/Step5";
 import Step6 from "@/components/scenes/hallucination/Step6";
+import Step7 from "@/components/scenes/hallucination/Step7";
 const menuConfig: Record<Menu, MenuMessage> = {
   [Menu.빅웩웩]: {
     message: [
@@ -67,11 +68,19 @@ export default function Hallucination() {
             setSceneNumber(6);
           }}
         />
-      )}{" "}
+      )}
       {sceneNumber === 6 && (
         <Step6
           onSelect={() => {
             setSceneNumber(7);
+          }}
+        />
+      )}
+      {sceneNumber === 7 && (
+        <Step7
+          menu={chosenMenu ?? Menu.빅웩웩}
+          onSelect={() => {
+            setSceneNumber(8);
           }}
         />
       )}

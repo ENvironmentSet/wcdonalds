@@ -9,18 +9,34 @@ import workerImageUrl from "@/public/assets/character/worker_character02.png";
 import Character from "@/components/Character/Character";
 import recipe_folder from "@/public/assets/wc_folder.png";
 import Image from "next/image";
-import { useState, useRef } from "react";
-
-export default function Step6() {
+import { useState, useRef, useEffect } from "react";
+import solutionSign from "@/public/assets/solution.png";
+import TextBox from "@/components/TextBox/TextBox";
+export default function Step6({ onSelect }: { onSelect: () => void }) {
   const [isDragging, setIsDragging] = useState(false);
   const [isOverDropZone, setIsOverDropZone] = useState(false);
   const [isDropped, setIsDropped] = useState(false);
-
+  const [sceneNum, setSceneNum] = useState(0);
   const dropZoneRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (sceneNum !== 1) return;
+
+    const timer = setTimeout(() => {
+      onSelect();
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [sceneNum, onSelect]);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
+  const hanleBtnClick = () => {
+    if (!isDropped) return;
+    if (sceneNum == 1) {
+      onSelect();
+    }
+    setSceneNum((prev) => prev + 1);
+  };
   const handleDrag = (_: any, info: any) => {
     if (!dropZoneRef.current) return;
 
@@ -73,7 +89,9 @@ export default function Step6() {
               : { scale: 1 }
           }
         >
-          <MessageBox isNextIcon={true}>{messageText}</MessageBox>
+          <MessageBox isNextIcon={true} onClick={hanleBtnClick}>
+            {messageText}
+          </MessageBox>
         </motion.div>
       </div>
 
@@ -99,6 +117,27 @@ export default function Step6() {
       >
         <Image alt="레시피 파일" src={recipe_folder} fill draggable={false} />
       </motion.div>
+      {sceneNum == 1 && (
+        <div className={styles.overlay}>
+          <div className={styles.warning}>
+            <Image src={solutionSign} alt="warning" fill />
+          </div>
+          <h1 className={styles.warning_comment}>RAG 적용 중...</h1>
+          <div className={styles.text_wrapper}>
+            <h2 className={styles.warning_explanation}>석상씨, 이제 근거를 기반으로 학습할 차례입니다.</h2>
+          </div>
+          <TextBox
+            textArr={[
+              "AI가 단순히 기억이나 추론에만 의존하지 않고,",
+              "답변 전에 관련 자료를 직접 찾아보고 참고하는 방식,",
+              "그게 바로 RAG예요.",
+              "즉, AI에게 자료집을 미리 읽혀놓고,",
+              " 그 내용을 바탕으로 정확하고 신뢰할 수 있는 답변을 만들어내는 거죠.",
+            ]}
+            size="s"
+          />
+        </div>
+      )}
     </motion.div>
   );
 }

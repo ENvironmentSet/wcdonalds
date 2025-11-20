@@ -31,3 +31,45 @@
 .drop_zone_active {
   filter: brightness(1.1);
 }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 0, 39, 0.8);
+  z-index: var(--z-upper-overlay);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: min(15vh, 12rem);
+}
+
+.warning {
+  width: min(28%, 70rem);
+  aspect-ratio: 8/1;
+
+  position: relative;
+}
+
+.warning_comment {
+  font-weight: 700;
+  font-size: min(3.5vw, 4.6rem);
+  color: white;
+  margin-top: min(10vh, 9.3rem);
+  margin-bottom: min(7vh, 8rem);
+}
+.warning_explanation {
+  color: white;
+  font-size: min(2.4vw, 3rem);
+  font-weight: 600;
+  line-height: 140%;
+  margin: 0;
+}
+
+.text_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: min(7vh, 8rem);
+}
