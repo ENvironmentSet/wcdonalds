@@ -14,7 +14,8 @@
   gap: min(10%, 12rem);
   justify-content: center;
   display: flex;
-
+  position: absolute;
+  bottom: 0;
   padding-top: min(3%, 8rem);
 }
 .dim_overlay {

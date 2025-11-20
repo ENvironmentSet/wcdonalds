@@ -33,13 +33,9 @@ export default function Step5({ menu, onSelect }: { menu: Menu; onSelect: () => 
         </div>
       )}
       <MessageBox>
-        {sceneNum == 0 ? (
-          <p>
-            아니 석상씨 이게 뭐에요? 이게 {Menu[menu]}예요??? <span>Are you serious?!!!</span>
-          </p>
-        ) : (
-          <p>후 진정하자..석상씨 모르면 모른다고 하세요. 제가 {Menu[menu]} 레시피 드릴테니까 외우시고요.</p>
-        )}
+        {sceneNum == 0
+          ? `아니 석상씨 이게 뭐에요? 이게 ${Menu[menu]}예요??? Are you serious?!!!`
+          : `후 진정하자..석상씨 모르면 모른다고 하세요. 제가 ${Menu[menu]} 레시피 드릴테니까 외우시고요.`}
       </MessageBox>
       <div className={styles.lower_wrapper}>
         <Character imageUrl={workerImageUrl} size="m" characterName="좌절하는 석상이" />
