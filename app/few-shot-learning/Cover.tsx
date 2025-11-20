@@ -1,6 +1,6 @@
 import { ChapterCover } from "@/components/ChapterCover/ChapterCover";
 import styles from "./index.module.css";
-
+import kitchen from "@/public/assets/kitchen.png";
 import Image from "next/image";
 
 export function Cover({ onClickNext }: { onClickNext: () => void }) {
