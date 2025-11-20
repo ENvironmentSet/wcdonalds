@@ -1,0 +1,25 @@
+.highlight {
+  color: var(--color-primary-red);
+  font-size: var(--font-size-medium);
+  font-weight: 700;
+  line-height: 170%;
+}
+
+.detail_box_text {
+  margin: 0;
+}
+
+.cover_group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cover_main_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  isolation: isolate;
+  z-index: 2;
+}
