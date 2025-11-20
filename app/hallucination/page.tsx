@@ -10,6 +10,7 @@ import Step4 from "@/components/scenes/hallucination/Step4";
 import Step5 from "@/components/scenes/hallucination/Step5";
 import Step6 from "@/components/scenes/hallucination/Step6";
 import Step7 from "@/components/scenes/hallucination/Step7";
+import Step0 from "@/components/scenes/hallucination/Step0";
 const menuConfig: Record<Menu, MenuMessage> = {
   [Menu.빅웩웩]: {
     message: [
@@ -36,6 +37,13 @@ export default function Hallucination() {
 
   return (
     <div className={3 <= sceneNumber && sceneNumber < 5 ? styles.background_div_matrix : styles.background_div}>
+      {sceneNumber === 0 && (
+        <Step0
+          onSelect={() => {
+            setSceneNumber(1);
+          }}
+        />
+      )}
       {sceneNumber === 1 && (
         <Step1
           onSelect={(menu) => {
