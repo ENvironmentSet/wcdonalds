@@ -11,6 +11,9 @@ import Step5 from "@/components/scenes/hallucination/Step5";
 import Step6 from "@/components/scenes/hallucination/Step6";
 import Step7 from "@/components/scenes/hallucination/Step7";
 import Step0 from "@/components/scenes/hallucination/Step0";
+import Step8 from "@/components/scenes/hallucination/Step8";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 const menuConfig: Record<Menu, MenuMessage> = {
   [Menu.빅웩웩]: {
     message: [
@@ -34,6 +37,12 @@ const menuConfig: Record<Menu, MenuMessage> = {
 
 export default function Hallucination() {
   const { sceneNumber, setChosenMenu, setSceneNumber, chosenMenu } = useManageHallucinationState();
+  const router = useRouter();
+  useEffect(() => {
+    if (sceneNumber === 9) {
+      router.push("/few-shot-learning");
+    }
+  }, [sceneNumber, router]);
 
   return (
     <div className={3 <= sceneNumber && sceneNumber < 5 ? styles.background_div_matrix : styles.background_div}>
@@ -89,6 +98,13 @@ export default function Hallucination() {
           menu={chosenMenu ?? Menu.빅웩웩}
           onSelect={() => {
             setSceneNumber(8);
+          }}
+        />
+      )}
+      {sceneNumber === 8 && (
+        <Step8
+          onSelect={() => {
+            setSceneNumber(9);
           }}
         />
       )}

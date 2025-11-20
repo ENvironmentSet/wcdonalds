@@ -1,11 +1,13 @@
 import Image from "next/image";
 import styles from "./index.module.css";
-import bg_image from "@/public/step4_wcwcspicy.png";
+import bg_image from "@/public/image.png";
 import { ViewTransition } from "react";
-export default function Step7({ onSelect }: { onSelect: () => void }) {
+import { useRouter } from "next/navigation";
+export default function Step8({ onSelect }: { onSelect: () => void }) {
+  const router = useRouter();
   return (
     <ViewTransition>
-      <div className={styles.bg_wrapper} onClick={() => onSelect}>
+      <div className={styles.bg_wrapper} onClick={() => router.push("/few-shot-learning")}>
         <Image src={bg_image} fill alt="background" />
       </div>
     </ViewTransition>
