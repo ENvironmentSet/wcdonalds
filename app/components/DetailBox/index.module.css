@@ -1,0 +1,13 @@
+.detail_box {
+  background-color: var(--color-primary-bg);
+  box-shadow: 0 4px 4px 0 #00000040;
+  word-break: keep-all;
+  text-align: center;
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  line-height: 170%;
+
+  padding: 72px 85px;
+
+  border-radius: 86px;
+}
